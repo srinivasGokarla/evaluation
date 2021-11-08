@@ -1,25 +1,29 @@
-async function getData(url) {
+async function getData(url){
 
-    let res = await fetch(url)
-    let data = res.json()
+
+    let res = await fetch(url);
+    let data = res.json();
 
     return data
 }
 
-function append(data,container) {
-    data.forEach(({title,image}) => {
-        let div = document.createElement("div")
-        let p = document.createElement("p")
+function append(data,container){
 
-        p.innerText = title;
+data.forEach(({title,image})=>{
+    let div = document.createElement("div");
+    let p = document.createElement("p");
 
-        let image = document.createElement("img")
-        image.src = image
+  p.innerText = title;
 
-        div.append(img,p)
+  let img = document.createElement("img")
+  img.src = image
 
-        container.append(div)
-    })
+  div.append(img,p)
+
+  container.append(div)
+})
+
+
 }
 
-export{getdata,append}
+export{getData,append}
